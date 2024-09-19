@@ -1,30 +1,25 @@
 import React from 'react';
-import classNames from 'classnames';
 
-export const Alert = ({ children, className, ...props }) => {
+const Alert = ({ children, className, ...props }) => {
+    const baseClasses = "border border-gold-500 bg-black text-gold-300 p-4 rounded-md shadow-lg";
+    const combinedClasses = className ? `${baseClasses} ${className}` : baseClasses;
+
     return (
-        <div
-            className={classNames(
-                "border border-gold-500 bg-black text-gold-300 p-4 rounded-md shadow-lg",
-                className
-            )}
-            {...props}
-        >
+        <div className={combinedClasses} {...props}>
             {children}
         </div>
     );
 };
 
-export const AlertDescription = ({ children, className, ...props }) => {
+const AlertDescription = ({ children, className, ...props }) => {
+    const baseClasses = "text-gold-100 text-sm md:text-base";
+    const combinedClasses = className ? `${baseClasses} ${className}` : baseClasses;
+
     return (
-        <p
-            className={classNames(
-                "text-gold-100 text-sm md:text-base",
-                className
-            )}
-            {...props}
-        >
+        <p className={combinedClasses} {...props}>
             {children}
         </p>
     );
 };
+
+export { Alert, AlertDescription };
