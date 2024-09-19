@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useCookies } from 'react-cookie';
 
 const MobileAlert = () => {
     const [showAlert, setShowAlert] = useState(false);
+    const [cookies, setCookie] = useCookies(['hasSeenMobileAlert']);
 
     useEffect(() => {
-        const handleResize = () => {
-            setShowAlert(window.innerWidth < 1024);
+        const checkAlertStatus = () => {
+            if (!cookies.hasSeenMobileAlert && window.innerWidth < 1024) {
+                setShowAlert(true);
+                setCookie('hasSeenMobileAlert', 'true', { path: '/', maxAge: 30 * 24 * 60 * 60 }); // 30 days expiration
+            }
         };
 
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+        checkAlertStatus();
+    }, [cookies.hasSeenMobileAlert, setCookie]);
 
     if (!showAlert) return null;
 
