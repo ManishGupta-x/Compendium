@@ -42,7 +42,7 @@ const Navbar = () => {
 
     const navLinks = [
         { href: 'https://github.com/ManishGupta-x', label: 'GitHub', icon: FaGithub },
-        { href: 'https://drive.google.com/file/d/1CKW9Xv75D1OJqtqYtZCzSdCx79kpuYoO/view?usp=sharing', label: 'Resume', icon: FaFileAlt },
+        { href: 'https://drive.google.com/file/d/1KgRhoBu6uCN5dYcK4SXuFvgp6V8kZpc7/view?usp=sharing', label: 'Resume', icon: FaFileAlt },
         { href: '/projects', label: 'Projects', icon: FaProjectDiagram },
         { href: '#contact', label: 'Contact', icon: FaEnvelope },
         { href: 'https://linkedin.com/in/manish-gupta-8861ba224', label: 'LinkedIn', icon: FaLinkedin },
