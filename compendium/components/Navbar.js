@@ -47,7 +47,6 @@ const Navbar = () => {
         { href: '#contact', label: 'Contact', icon: FaEnvelope },
         { href: 'https://linkedin.com/in/manish-gupta-8861ba224', label: 'LinkedIn', icon: FaLinkedin },
     ];
-
     return (
         <nav className={`fixed ${isMobile ? 'bottom-4 left-1/2 transform -translate-x-1/2' : 'top-4 right-4'} z-50 p-4 shadow-[0_8px_32px_0_rgba(216,215,141,0.1)] backdrop-blur-[8px] rounded-2xl border border-[rgba(255,255,255,0.18)] font-Signika pulse-bg`}>
             <div className={`flex ${isMobile ? 'flex-row' : 'flex-col'} items-center ${isMobile ? 'space-x-4' : 'space-y-6'}`}>
